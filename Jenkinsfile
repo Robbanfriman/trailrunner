@@ -9,5 +9,14 @@ pipeline {
             }
         }
     }
-}
+
+     stage('Test trailrunnerProject') {
+            steps {
+                dir('TrailrunnerProject') {
+                    bat 'mvn test'
+            }
+        }
+    }
+    
+    }
 }
