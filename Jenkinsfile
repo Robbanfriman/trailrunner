@@ -17,8 +17,21 @@ pipeline {
             }
             post {
                 always {
-                    jacoco(execPattern: 'TrailrunnerProject/target/*.exec')
-                    junit  '**/target/surefire-reports/*.xml'
+                    dir('TrailrunnerProject') {
+                        junit  '**/target/surefire-reports/*.xml'
+
+                    }
+
+                }
+                success{
+                    dir('TrailrunnerProject') {
+                        jacoco(
+                            execPattern: '**/target/*.exec',
+                            classPattern: '**/target/classes/se/iths',
+                            sourcePattern: '**/src/main/java/se/iths'
+                        )
+                    }
+
 
                 }
             }
