@@ -43,7 +43,7 @@ pipeline {
         always{
             dir ("Selenium"){    
                 
-                    robot outputPath: 'C:\ProgramData\Jenkins\.jenkins\workspace\robert_friman\Selenium', passThreshold: 80.0
+                robot outputPath: 'C:/ProgramData/Jenkins/.jenkins/workspace/robert_friman/Selenium', passThreshold: 80.0
                 
             }
         }
