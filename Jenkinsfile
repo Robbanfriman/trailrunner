@@ -15,8 +15,15 @@ pipeline {
                 dir('TrailrunnerProject') {
                     bat 'mvn test'
             }
+            post {
+                always {
+                    jacoco(execPattern: 'TrailrunnerProject/target/*.exec')
+                    junit  '**/target/surefire-reports/*.xml'
+
+                }
+            }
         }
     }
-    
+
     }
 }
