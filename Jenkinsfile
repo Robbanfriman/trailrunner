@@ -30,6 +30,9 @@ pipeline {
             dir('TrailrunnerProject') {
                 junit  '**/target/surefire-reports/*.xml'
             }
+            dir ("Selenium"){    
+                robot outputPath: 'C:/ProgramData/Jenkins/.jenkins/workspace/robert_friman/Selenium', passThreshold: 80.0   
+            }
         }
         success{
             dir('TrailrunnerProject') {
@@ -39,14 +42,7 @@ pipeline {
                     sourcePattern: '**/src/main/java/se/iths'
                 )
             }
-        }
-        always{
-            dir ("Selenium"){    
-                
-                robot outputPath: 'C:/ProgramData/Jenkins/.jenkins/workspace/robert_friman/Selenium', passThreshold: 80.0
-                
-            }
-        }
+        }      
     }              
 }
 
