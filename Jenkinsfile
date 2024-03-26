@@ -17,6 +17,13 @@ pipeline {
                 }
             }
         }
+        stage ("run robot"){
+            steps {
+                dir("Selenium"){
+                    bat "robot test.robot"
+                }
+            }
+        }
     }
     post {
         always {
@@ -33,5 +40,13 @@ pipeline {
                 )
             }
         }
-    }
+        always{
+            dir ("Selenium"){    
+                
+                    robot outputPath: 'C:\ProgramData\Jenkins\.jenkins\workspace\robert_friman\Selenium', passThreshold: 80.0
+                
+            }
+        }
+    }              
 }
+
