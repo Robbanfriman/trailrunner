@@ -33,6 +33,8 @@ pipeline {
             dir ("Selenium"){    
                 robot outputPath: 'C:/ProgramData/Jenkins/.jenkins/workspace/robert_friman/Selenium', passThreshold: 80.0   
             }
+            mail to: 'r_friman@hotmail.com',
+                subject: test
         }
         success{
             dir('TrailrunnerProject') {
