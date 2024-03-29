@@ -33,7 +33,7 @@ testing the date selection
 
 
 testing to book a car
-        Given i am logged in    ${USER}    ${PW}
+        Given i am logged in    robert test
         when i chose date
         and then i book a car
 
