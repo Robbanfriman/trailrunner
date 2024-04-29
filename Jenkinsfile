@@ -21,6 +21,7 @@ pipeline {
             steps {
                 dir("Selenium"){
                     bat "robot test.robot"
+                    bat "eventTest.robot"
                 }
             }
         }
