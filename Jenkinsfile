@@ -20,8 +20,8 @@ pipeline {
         stage ("run robot"){
             steps {
                 dir("Selenium"){
-                    bat "robot adminPageTest.robot"
-                    bat "robot eventTest.robot"
+                    bat "robot Test.robot"
+                    bat ""
                     
                 }
             }
